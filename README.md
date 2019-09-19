@@ -1,13 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**
-
-- [Filter GitHub Action](#filter-github-action)
-  - [Usage](#usage)
-  - [Author](#author)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Filter GitHub Action
 
 [![npm version](https://badge.fury.io/js/%40technote-space%2Ffilter-github-action.svg)](https://badge.fury.io/js/%40technote-space%2Ffilter-github-action)

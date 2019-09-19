@@ -18,6 +18,9 @@ Helper to filter GitHub Action.
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Usage
+1. Install  
+`npm i @technote-space/filter-github-action`
+1.   
 ```js
 import { isTargetEvent } from '@technote-space/filter-github-action';
 

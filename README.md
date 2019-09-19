@@ -8,6 +8,9 @@
 
 Helper to filter GitHub Action.
 
+<!-- START doctoc -->
+<!-- END doctoc -->
+
 ## Usage
 ```js
 import { isTargetEvent } from '@technote-space/filter-github-action';

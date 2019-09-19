@@ -1,0 +1,25 @@
+on:
+  push:
+    tags:
+      - '*'
+      - '*/*'
+name: Publish Package
+jobs:
+  release:
+    name: Publish Package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Build
+        run: |
+          yarn install
+          yarn build
+      - name: Test
+        run: yarn test
+      - name: Publish
+        uses: actions/npm@master
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        with:
+          args: publish

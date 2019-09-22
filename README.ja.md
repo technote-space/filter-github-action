@@ -8,7 +8,7 @@
 
 *Read this in other languages: [English](README.md), [日本語](README.ja.md).*
 
-Helper to filter GitHub Action.
+GitHub Action を Context などでフィルタリングするためのヘルパー
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -19,8 +19,8 @@ Helper to filter GitHub Action.
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Usage
-1. Install  
+## 使用方法
+1. インストール  
 `npm i @technote-space/filter-github-action`
 1.   
 ```js

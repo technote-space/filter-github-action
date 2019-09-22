@@ -353,6 +353,13 @@
     universal-user-agent "^3.0.0"
     url-template "^2.0.8"
 
+"@technote-space/github-action-test-helper@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@technote-space/github-action-test-helper/-/github-action-test-helper-0.0.1.tgz#3245dffb9b8fc6969b005fe4b1c1413d712fe2fe"
+  integrity sha512-ocEYACl1lqRsF6S5QZEyh5i4ONT0o/lp9jowOAmFgC9Gl9T6lHc4ZlWLzglir0s7weR/TCR7JOFb1zDFglY3Hg==
+  dependencies:
+    "@actions/github" "^1.1.0"
+
 "@types/babel__core@^7.1.0":
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.2.tgz#608c74f55928033fce18b99b213c16be4b3d114f"

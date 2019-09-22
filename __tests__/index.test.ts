@@ -1,6 +1,6 @@
 import { Context } from '@actions/github/lib/context';
+import { getContext } from '@technote-space/github-action-test-helper';
 import { isTargetEvent } from '../src';
-import { getContext } from './util';
 
 export const targets = {
 	'release': [

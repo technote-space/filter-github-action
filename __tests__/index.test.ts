@@ -11,6 +11,10 @@ export const targets = {
 		(context: Context): boolean => /^refs\/tags\//.test(context.ref),
 		'rerequested',
 	],
+	'pull_request': [
+		'*',
+	],
+	'project_card': '*',
 };
 
 describe('isTargetEvent', () => {
@@ -36,6 +40,40 @@ describe('isTargetEvent', () => {
 				action: 'published',
 			},
 			eventName: 'release',
+		}))).toBeTruthy();
+	});
+
+	it('should return true 4', () => {
+		expect(isTargetEvent(targets, getContext({
+			eventName: 'pull_request',
+			ref: 'refs/tags/test',
+		}))).toBeTruthy();
+	});
+
+	it('should return true 5', () => {
+		expect(isTargetEvent(targets, getContext({
+			eventName: 'pull_request',
+			payload: {
+				action: 'open',
+			},
+			ref: 'refs/tags/test',
+		}))).toBeTruthy();
+	});
+
+	it('should return true 6', () => {
+		expect(isTargetEvent(targets, getContext({
+			eventName: 'project_card',
+			ref: 'refs/tags/test',
+		}))).toBeTruthy();
+	});
+
+	it('should return true 7', () => {
+		expect(isTargetEvent(targets, getContext({
+			eventName: 'project_card',
+			payload: {
+				action: 'open',
+			},
+			ref: 'refs/tags/test',
 		}))).toBeTruthy();
 	});
 

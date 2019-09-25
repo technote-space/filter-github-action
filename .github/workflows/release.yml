@@ -12,6 +12,10 @@ jobs:
         uses: actions/checkout@master
         with:
           fetch-depth: 3
+      - name: Check package version
+        uses: technote-space/ga-package-version-checker@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install Package dependencies
         run: yarn install
       - name: Test
@@ -24,3 +28,10 @@ jobs:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         with:
           args: publish
+      - uses: 8398a7/action-slack@v1
+        with:
+          type: failure
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: failure()

@@ -3,9 +3,12 @@ import { Context } from '@actions/github/lib/context';
 const isTargetEventName = (events: object, context: Context): boolean => context.eventName in events;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const isTargetEventAction = (action: string | any[] | Function, context: Context): boolean => {
+const isTargetEventAction = (action: string | any[] | Function, context: Context, some = true): boolean => {
 	if (Array.isArray(action)) {
-		return action.some(item => isTargetEventAction(item, context));
+		if (some) {
+			return action.some(item => isTargetEventAction(item, context, false));
+		}
+		return !action.some(item => !isTargetEventAction(item, context, false));
 	}
 	if (typeof action === 'function') {
 		return action(context);

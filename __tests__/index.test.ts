@@ -136,4 +136,94 @@ describe('isTargetLabels', () => {
 			},
 		}))).toBe(true);
 	});
+
+	it('should return correctly README test pattern', () => {
+		expect(isTargetLabels([], [], Object.assign(context('issues'), {
+			payload: {
+				issue: {
+					labels: [],
+				},
+			},
+		}))).toBe(true);
+
+		expect(isTargetLabels([], [], Object.assign(context('pull_request'), {
+			payload: {
+				'pull_request': {
+					labels: [],
+				},
+			},
+		}))).toBe(true);
+
+		expect(isTargetLabels([], [], Object.assign(context('push'), {
+			payload: {
+				issue: {
+					labels: [],
+				},
+			},
+		}))).toBe(false);
+
+		expect(isTargetLabels(['label1'], [], Object.assign(context('issues'), {
+			payload: {
+				issue: {
+					labels: [],
+				},
+			},
+		}))).toBe(false);
+
+		expect(isTargetLabels(['label1'], [], Object.assign(context('issues'), {
+			payload: {
+				issue: {
+					labels: [{name: 'label1'}],
+				},
+			},
+		}))).toBe(true);
+
+		expect(isTargetLabels(['label1'], [], Object.assign(context('issues'), {
+			payload: {
+				issue: {
+					labels: [{name: 'label1'}, {name: 'label2'}],
+				},
+			},
+		}))).toBe(true);
+
+		expect(isTargetLabels(['label1', 'label2'], [], Object.assign(context('issues'), {
+			payload: {
+				issue: {
+					labels: [{name: 'label1'}],
+				},
+			},
+		}))).toBe(true);
+
+		expect(isTargetLabels([], ['label1'], Object.assign(context('issues'), {
+			payload: {
+				issue: {
+					labels: [],
+				},
+			},
+		}))).toBe(true);
+
+		expect(isTargetLabels([], ['label1'], Object.assign(context('issues'), {
+			payload: {
+				issue: {
+					labels: [{name: 'label1'}],
+				},
+			},
+		}))).toBe(false);
+
+		expect(isTargetLabels(['label1'], ['label2'], Object.assign(context('issues'), {
+			payload: {
+				issue: {
+					labels: [{name: 'label1'}, {name: 'label2'}],
+				},
+			},
+		}))).toBe(false);
+
+		expect(isTargetLabels(['label1'], ['label3'], Object.assign(context('issues'), {
+			payload: {
+				issue: {
+					labels: [{name: 'label1'}, {name: 'label2'}],
+				},
+			},
+		}))).toBe(true);
+	});
 });

@@ -26,7 +26,7 @@ Helper to filter GitHub Action.
 ```typescript
 import { Context } from '@actions/github/lib/context';
 import { context } from '@actions/github';
-import { isTargetEvent } from '@technote-space/filter-github-action';
+import { isTargetEvent, isTargetLabels } from '@technote-space/filter-github-action';
 
 console.log( isTargetEvent( {
 	'release': [
@@ -50,10 +50,14 @@ console.log( isTargetEvent( {
 	// wildcard
 	'project_card': '*',
 }, context ) );
+
+const includes = ['label1', 'label2'];
+const excludes = ['label3', 'label4'];
+console.log( isTargetLabels( includes, excludes, context ) );
 ```
 
-* Results from the above example
-
+### Results from the above example
+#### isTargetEvent
 |eventName|action|ref|result|
 |:---:|:---:|:---:|:---:|
 |release|published|*|true|
@@ -67,6 +71,21 @@ console.log( isTargetEvent( {
 |pull_request|rerequested|refs/heads/v1.2.3|false|
 |project_card|*|*|true|
 |label|*|*|false|
+
+#### isTargetLabels
+|eventName|context labels|includes|excludes|result|
+|:---:|:---:|:---:|:---:|:---:|
+|issues|---|---|---|true|
+|pull_request|---|---|---|true|
+|push|---|---|---|false|
+|issues|---|label1|---|false|
+|issues|label1|label1|---|true|
+|issues|label1, label2|label1|---|true|
+|issues|label1|label1, label2|---|true|
+|issues|---|---|label1|true|
+|issues|label1|---|label1|false|
+|issues|label1, label2|label1|label2|false|
+|issues|label1, label2|label1|label3|true|
 
 ## Author
 [GitHub (Technote)](https://github.com/technote-space)  

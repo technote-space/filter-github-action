@@ -162,6 +162,14 @@ describe('isTargetLabels', () => {
 			},
 		}))).toBe(false);
 
+		expect(isTargetLabels([], [], Object.assign(context('push'), {
+			payload: {
+				issue: {
+					labels: [{name: 'label1'}],
+				},
+			},
+		}))).toBe(false);
+
 		expect(isTargetLabels(['label1'], [], Object.assign(context('issues'), {
 			payload: {
 				issue: {

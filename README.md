@@ -15,6 +15,9 @@ Helper to filter GitHub Action.
 **Table of Contents**
 
 - [Usage](#usage)
+  - [Results from the above example](#results-from-the-above-example)
+    - [isTargetEvent](#istargetevent)
+    - [isTargetLabels](#istargetlabels)
 - [Author](#author)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->

@@ -69,6 +69,6 @@ describe('getLabels', () => {
 	it('should return false if not valid event', () => {
 		expect(getLabels(getContext({
 			eventName: 'push',
-		}))).toBe(false);
+		}))).toEqual([]);
 	});
 });

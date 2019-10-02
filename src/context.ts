@@ -7,5 +7,5 @@ export const getLabels = (context: Context): string[] | false => {
 	if ('pull_request' === context.eventName) {
 		return context.payload.pull_request && 'labels' in context.payload.pull_request ? context.payload.pull_request.labels.map(label => label.name) : false;
 	}
-	return false;
+	return [];
 };

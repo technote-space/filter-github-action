@@ -80,7 +80,7 @@ console.log( isTargetLabels( includes, excludes, context ) );
 |:---:|:---:|:---:|:---:|:---:|
 |issues|---|---|---|true|
 |pull_request|---|---|---|true|
-|push|---|---|---|false|
+|push|---|---|---|true|
 |issues|label1|---|---|true|
 |issues|---|label1|---|false|
 |issues|label1|label1|---|true|

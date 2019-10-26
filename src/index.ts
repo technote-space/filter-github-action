@@ -14,7 +14,7 @@ const isTargetEventAction = (action: string | any[] | Function, context: Context
 	if (typeof action === 'function') {
 		return action(context);
 	}
-	return '*' === action || context.payload.action === action;
+	return '*' === action || context.action === action;
 };
 
 /**

@@ -22,7 +22,7 @@
     "dist"
   ],
   "dependencies": {
-    "@actions/github": "^2.0.0"
+    "@actions/github": "^2.0.1"
   },
   "devDependencies": {
     "@technote-space/github-action-test-helper": "^0.0.27",

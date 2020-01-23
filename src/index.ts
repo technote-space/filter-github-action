@@ -11,9 +11,11 @@ const isTargetEventAction = (action: string | any[] | Function, context: Context
 		}
 		return !action.some(item => !isTargetEventAction(item, context, false));
 	}
+
 	if (typeof action === 'function') {
 		return action(context);
 	}
+
 	return '*' === action || context.payload.action === action;
 };
 
@@ -35,5 +37,6 @@ export const isTargetLabels = (includes: string[], excludes: string[], context: 
 	if (false === labels) {
 		return false;
 	}
+
 	return (!includes.length || !!labels.filter(label => includes.includes(label)).length) && !labels.filter(label => excludes.includes(label)).length;
 };

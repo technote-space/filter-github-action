@@ -18,6 +18,7 @@ GitHub Actions を Context などでフィルタリングするためのヘル�
   - [上の例の結果](#%E4%B8%8A%E3%81%AE%E4%BE%8B%E3%81%AE%E7%B5%90%E6%9E%9C)
     - [isTargetEvent](#istargetevent)
     - [isTargetLabels](#istargetlabels)
+  - [Ignore check](#ignore-check)
 - [Author](#author)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->

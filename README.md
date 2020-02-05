@@ -18,6 +18,7 @@ Helper to filter GitHub Actions.
   - [Results from the above example](#results-from-the-above-example)
     - [isTargetEvent](#istargetevent)
     - [isTargetLabels](#istargetlabels)
+  - [Ignore check](#ignore-check)
 - [Author](#author)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->

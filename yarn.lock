@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@actions/core@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@actions/core/-/core-1.2.2.tgz#3c4848d50378f9e3bcb67bcf97813382ec7369ee"
+  integrity sha512-IbCx7oefq+Gi6FWbSs2Fnw8VkEI6Y4gvjrYprY3RV//ksq/KPMlClOerJ4jRosyal6zkUIc8R9fS/cpRMlGClg==
+
 "@actions/github@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@actions/github/-/github-2.1.0.tgz#ca36cfb146b4c8955f3d5f88d8dde5f89194de21"
@@ -12,9 +17,9 @@
     "@octokit/rest" "^16.15.0"
 
 "@actions/http-client@^1.0.3":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@actions/http-client/-/http-client-1.0.5.tgz#7df8013257cb50bdbe93199b765f0db67e46bbac"
-  integrity sha512-kX9T1EwfohZU/iTHei0nQlykxdTV9xvKMeHYTtYkfkgBKoe2Z0z0IP3ANVYTsFAlycMwLheBhVEBTm2XvGhR1Q==
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@actions/http-client/-/http-client-1.0.6.tgz#6f9267ca50e1d74d8581f4a894a943cd4c97b49a"
+  integrity sha512-LGmio4w98UyGX33b/W6V6Nx/sQHRXZ859YlMkn36wPsXPB82u8xTVlA/Dq2DXrm6lEq9RVmisRJa1c+HETAIJA==
   dependencies:
     tunnel "0.0.6"
 

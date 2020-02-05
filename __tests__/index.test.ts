@@ -1,5 +1,5 @@
 import { Context } from '@actions/github/lib/context';
-import { generateContext } from '@technote-space/github-action-test-helper';
+import { generateContext, testEnv } from '@technote-space/github-action-test-helper';
 import { isTargetEvent, isTargetLabels } from '../src';
 
 export const targets = {
@@ -27,6 +27,8 @@ const context = (event: string, action?: string, ref?: string): Context => gener
 });
 
 describe('isTargetEvent', () => {
+	testEnv();
+
 	it('should return true 1', () => {
 		expect(isTargetEvent(targets, context('release', 'published', undefined))).toBe(true);
 	});
@@ -49,6 +51,11 @@ describe('isTargetEvent', () => {
 
 	it('should return true 6', () => {
 		expect(isTargetEvent(targets, context('project_card', undefined, undefined))).toBe(true);
+	});
+
+	it('should return true 7', () => {
+		process.env.INPUT_IGNORE_CONTEXT_CHECK = 'true';
+		expect(isTargetEvent(targets, context('release', 'created', undefined))).toBe(true);
 	});
 
 	it('should return false 1', () => {

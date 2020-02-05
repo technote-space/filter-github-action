@@ -91,6 +91,12 @@ console.log( isTargetLabels( includes, excludes, context ) );
 |issues|label1, label2|label1|label2|false|
 |issues|label1, label2|label1|label3|true|
 
+### Ignore check
+```
+with:
+  IGNORE_CONTEXT_CHECK: true
+```
+
 ## Author
 [GitHub (Technote)](https://github.com/technote-space)  
 [Blog](https://technote.space)

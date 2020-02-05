@@ -1,5 +1,8 @@
+import { getInput } from '@actions/core';
 import { Context } from '@actions/github/lib/context';
 import { getLabels } from './context';
+
+const getBoolValue = (input: string): boolean => !['false', '0', '', 'no', 'n'].includes(input.trim().toLowerCase());
 
 const isTargetEventName = (events: object, context: Context): boolean => context.eventName in events;
 
@@ -24,7 +27,9 @@ const isTargetEventAction = (action: string | any[] | Function, context: Context
  * @param {Context} context context
  * @return {boolean} is target event?
  */
-export const isTargetEvent = (targets: object, context: Context): boolean => isTargetEventName(targets, context) && isTargetEventAction(targets[context.eventName], context);
+export const isTargetEvent = (targets: object, context: Context): boolean =>
+	getBoolValue(getInput('IGNORE_CONTEXT_CHECK')) ||
+	(isTargetEventName(targets, context) && isTargetEventAction(targets[context.eventName], context));
 
 /**
  * @param {string[]} includes include labels

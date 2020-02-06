@@ -12,15 +12,15 @@ Helper to filter GitHub Actions.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**
+<details>
+<summary>Details</summary>
 
 - [Usage](#usage)
   - [Results from the above example](#results-from-the-above-example)
-    - [isTargetEvent](#istargetevent)
-    - [isTargetLabels](#istargetlabels)
   - [Ignore check](#ignore-check)
 - [Author](#author)
 
+</details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Usage

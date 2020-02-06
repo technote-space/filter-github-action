@@ -12,15 +12,15 @@ GitHub Actions を Context などでフィルタリングするためのヘル�
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**
+<details>
+<summary>Details</summary>
 
 - [使用方法](#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
   - [上の例の結果](#%E4%B8%8A%E3%81%AE%E4%BE%8B%E3%81%AE%E7%B5%90%E6%9E%9C)
-    - [isTargetEvent](#istargetevent)
-    - [isTargetLabels](#istargetlabels)
   - [Ignore check](#ignore-check)
 - [Author](#author)
 
+</details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## 使用方法

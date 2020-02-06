@@ -38,7 +38,7 @@ describe('isTargetEvent', () => {
 	});
 
 	it('should return true 3', () => {
-		expect(isTargetEvent(targets, context('push', undefined, 'tags/v1.2.3'))).toBe(true);
+		expect(isTargetEvent(targets, context('push', undefined, 'refs/tags/v1.2.3'))).toBe(true);
 	});
 
 	it('should return true 4', () => {
@@ -46,7 +46,7 @@ describe('isTargetEvent', () => {
 	});
 
 	it('should return true 5', () => {
-		expect(isTargetEvent(targets, context('pull_request', 'rerequested', 'tags/v1.2.3'))).toBe(true);
+		expect(isTargetEvent(targets, context('pull_request', 'rerequested', 'refs/tags/v1.2.3'))).toBe(true);
 	});
 
 	it('should return true 6', () => {
@@ -63,15 +63,15 @@ describe('isTargetEvent', () => {
 	});
 
 	it('should return false 2', () => {
-		expect(isTargetEvent(targets, context('push', undefined, 'heads/v1.2.3'))).toBe(false);
+		expect(isTargetEvent(targets, context('push', undefined, 'refs/heads/v1.2.3'))).toBe(false);
 	});
 
 	it('should return false 3', () => {
-		expect(isTargetEvent(targets, context('pull_request', 'created', 'tags/v1.2.3'))).toBe(false);
+		expect(isTargetEvent(targets, context('pull_request', 'created', 'refs/tags/v1.2.3'))).toBe(false);
 	});
 
 	it('should return false 4', () => {
-		expect(isTargetEvent(targets, context('pull_request', 'rerequested', 'heads/v1.2.3'))).toBe(false);
+		expect(isTargetEvent(targets, context('pull_request', 'rerequested', 'refs/heads/v1.2.3'))).toBe(false);
 	});
 
 	it('should return false 5', () => {

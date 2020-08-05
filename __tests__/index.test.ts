@@ -50,10 +50,14 @@ describe('isTargetEvent', () => {
   });
 
   it('should return true 6', () => {
-    expect(isTargetEvent(targets, context('project_card', undefined, undefined))).toBe(true);
+    expect(isTargetEvent(targets, context('pull_request_target', 'rerequested', 'refs/tags/v1.2.3'))).toBe(true);
   });
 
   it('should return true 7', () => {
+    expect(isTargetEvent(targets, context('project_card', undefined, undefined))).toBe(true);
+  });
+
+  it('should return true 8', () => {
     process.env.INPUT_IGNORE_CONTEXT_CHECK = 'true';
     expect(isTargetEvent(targets, context('release', 'created', undefined))).toBe(true);
   });

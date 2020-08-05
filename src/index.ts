@@ -5,7 +5,13 @@ import {getLabels} from './context';
 const getBoolValue = (input: string): boolean => !['false', '0', '', 'no', 'n'].includes(input.trim().toLowerCase());
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const isTargetEventName = (events: any, context: Context): boolean => context.eventName in events;
+const isTargetEventName = (events: any, context: Context): boolean => {
+  if ('pull_request' in events && !('pull_request_target' in events)) {
+    events['pull_request_target'] = events['pull_request'];
+  }
+
+  return context.eventName in events;
+};
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const isTargetEventAction = (action: string | any[] | ((context: Context) => boolean), context: Context, some = true): boolean => {

@@ -2,11 +2,20 @@ import {getInput} from '@actions/core';
 import {Context} from '@actions/github/lib/context';
 import {getLabels} from './context';
 
+type OptionType = Partial<{
+  notCheckPrTarget: boolean;
+  notCheckWorkflowRun: boolean;
+}>;
+
 const getBoolValue = (input: string): boolean => !['false', '0', '', 'no', 'n'].includes(input.trim().toLowerCase());
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const isTargetEventName = (events: any, context: Context): boolean => {
-  if ('pull_request' in events && !('pull_request_target' in events)) {
+const isTargetEventName = (events: any, context: Context, options?: OptionType): boolean => {
+  if (!options?.notCheckWorkflowRun && !('workflow_run' in events) && 'workflow_run' === context.eventName) {
+    events['workflow_run'] = '*';
+  }
+
+  if (!options?.notCheckPrTarget && 'pull_request' in events && !('pull_request_target' in events)) {
     events['pull_request_target'] = events['pull_request'];
   }
 
@@ -32,11 +41,12 @@ const isTargetEventAction = (action: string | any[] | ((context: Context) => boo
 /**
  * @param {object} targets targets
  * @param {Context} context context
+ * @param {OptionType} options options
  * @return {boolean} is target event?
  */
-export const isTargetEvent = (targets: any, context: Context): boolean => // eslint-disable-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
+export const isTargetEvent = (targets: any, context: Context, options?: OptionType): boolean => // eslint-disable-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
   getBoolValue(getInput('IGNORE_CONTEXT_CHECK')) ||
-  (isTargetEventName(targets, context) && isTargetEventAction(targets[context.eventName], context));
+  (isTargetEventName(targets, context, options) && isTargetEventAction(targets[context.eventName], context));
 
 /**
  * @param {string[]} includes include labels

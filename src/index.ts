@@ -11,6 +11,10 @@ const getBoolValue = (input: string): boolean => !['false', '0', '', 'no', 'n'].
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const isTargetEventName = (events: any, context: Context, options?: OptionType): boolean => {
+  if ('*' in events) {
+    return true;
+  }
+
   if (!options?.notCheckWorkflowRun && !('workflow_run' in events) && 'workflow_run' === context.eventName) {
     events['workflow_run'] = '*';
   }
@@ -46,7 +50,7 @@ const isTargetEventAction = (action: string | any[] | ((context: Context) => boo
  */
 export const isTargetEvent = (targets: any, context: Context, options?: OptionType): boolean => // eslint-disable-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
   getBoolValue(getInput('IGNORE_CONTEXT_CHECK')) ||
-  (isTargetEventName(targets, context, options) && isTargetEventAction(targets[context.eventName], context));
+  (isTargetEventName(targets, context, options) && isTargetEventAction(targets[context.eventName] ?? targets['*'], context));
 
 /**
  * @param {string[]} includes include labels

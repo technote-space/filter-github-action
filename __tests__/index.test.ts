@@ -75,6 +75,10 @@ describe('isTargetEvent', () => {
     expect(isTargetEvent(getTarget({'workflow_run': '*'}), context('workflow_run', undefined, undefined), {notCheckWorkflowRun: true})).toBe(true);
   });
 
+  it('should return true 11', () => {
+    expect(isTargetEvent(getTarget({'*': context => context.ref.startsWith('refs/heads/test')}), context('repository_dispatch', undefined, 'refs/heads/test/123'))).toBe(true);
+  });
+
   it('should return false 1', () => {
     expect(isTargetEvent(getTarget(), context('release', 'created', undefined))).toBe(false);
   });
@@ -101,6 +105,10 @@ describe('isTargetEvent', () => {
 
   it('should return false 7', () => {
     expect(isTargetEvent(getTarget(), context('workflow_run', undefined, undefined), {notCheckWorkflowRun: true})).toBe(false);
+  });
+
+  it('should return false 8', () => {
+    expect(isTargetEvent(getTarget({'*': context => context.ref.startsWith('refs/heads/test')}), context('repository_dispatch', undefined, 'refs/heads/feature'))).toBe(false);
   });
 });
 

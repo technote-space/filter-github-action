@@ -36,6 +36,21 @@ describe('getLabels', () => {
         },
       },
     }))).toEqual(['test1', 'test2']);
+    expect(getLabels(getContext({
+      eventName: 'pull_request_target',
+      payload: {
+        'pull_request': {
+          labels: [
+            {
+              name: 'test1',
+            },
+            {
+              name: 'test2',
+            },
+          ],
+        },
+      },
+    }))).toEqual(['test1', 'test2']);
   });
 
   it('should return false if issue is invalid', () => {

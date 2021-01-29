@@ -561,24 +561,24 @@
     "@octokit/types" "^6.0.3"
     universal-user-agent "^6.0.0"
 
-"@octokit/openapi-types@^3.2.1":
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/@octokit/openapi-types/-/openapi-types-3.2.1.tgz#5bf4fffe2c66bb3f7306351fdcdcb51c8b3a6538"
-  integrity sha512-OOXW6e+vSIpA63Zp5Q+hio3tnQsWFnn9xx1xco0arjTOBcKW/NwFsmhpmj4Yt5IddUS1V7PVGSfRRDO5qZhEqQ==
+"@octokit/openapi-types@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@octokit/openapi-types/-/openapi-types-3.3.0.tgz#8797af01feb524e3f4978e1c9bf7bc7c18ef9d25"
+  integrity sha512-s3dd32gagPmKaSLNJ9aPNok7U+tl69YLESf6DgQz5Ml/iipPZtif3GLvWpNXoA6qspFm1LFUZX+C3SqWX/Y/TQ==
 
 "@octokit/plugin-paginate-rest@^2.2.3":
-  version "2.8.4"
-  resolved "https://registry.yarnpkg.com/@octokit/plugin-paginate-rest/-/plugin-paginate-rest-2.8.4.tgz#0aa75e64e3113d54777b2cefe92b1953052d1020"
-  integrity sha512-4JD7Chzs4k7Z9asxLoagwwP1md5cS5AiPbnHCRuiN/W8Jwe8a/ZNxZi5Ipb4D/lkr3qQNRcCEsjXldNH8Y8J/w==
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/@octokit/plugin-paginate-rest/-/plugin-paginate-rest-2.9.0.tgz#f52c26850b019584be8dc55c0bd6257339c0fa43"
+  integrity sha512-XxbOg45r2n/2QpU6hnGDxQNDRrJ7gjYpMXeDbUCigWTHECmjoyFLizkFO2jMEtidMkfiELn7AF8GBAJ/cbPTnA==
   dependencies:
-    "@octokit/types" "^6.5.3"
+    "@octokit/types" "^6.6.0"
 
 "@octokit/plugin-rest-endpoint-methods@^4.0.0", "@octokit/plugin-rest-endpoint-methods@^4.4.1":
-  version "4.8.2"
-  resolved "https://registry.yarnpkg.com/@octokit/plugin-rest-endpoint-methods/-/plugin-rest-endpoint-methods-4.8.2.tgz#2733b2629bca1fbd5e6bae98498bdeddcba810e9"
-  integrity sha512-AJqyvsm7R8pDGRPS8qahq3Y/OAK4uwbAPs+RPc1xiSqFq7lfAdj3CDTnEDpwtcxFfvYptiLHkgQfhrX/LVmBpg==
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/@octokit/plugin-rest-endpoint-methods/-/plugin-rest-endpoint-methods-4.9.0.tgz#9b7ce7ea52ee9f08ccb5d5230f0e8c61572973b0"
+  integrity sha512-EAr2epvY8JfXSi/cdMsyyfBctdKkolDH7xSgu3MKBqPRm0WfQ2QvI050jz61XZXoVK3ZgrhdMCyd1GgOFz7CSw==
   dependencies:
-    "@octokit/types" "^6.5.3"
+    "@octokit/types" "^6.6.0"
     deprecation "^2.3.1"
 
 "@octokit/request-error@^2.0.0":
@@ -604,12 +604,12 @@
     once "^1.4.0"
     universal-user-agent "^6.0.0"
 
-"@octokit/types@^6.0.3", "@octokit/types@^6.5.3":
-  version "6.5.3"
-  resolved "https://registry.yarnpkg.com/@octokit/types/-/types-6.5.3.tgz#06a419e4cfd39048da4e84b5072c690836c66f1d"
-  integrity sha512-kKefDpNiYXQoZvvbDxgdTDKn1pzopxyn9W/7nkIxNaiRC20jKDEC8vVT8GN6R8eTz8pImz2198jCXTgEMck+sA==
+"@octokit/types@^6.0.3", "@octokit/types@^6.6.0":
+  version "6.6.0"
+  resolved "https://registry.yarnpkg.com/@octokit/types/-/types-6.6.0.tgz#165d0e7940d5f910b3373f02336c161dcdf097fe"
+  integrity sha512-nmFoU3HCbw1AmnZU/eto2VvzV06+N7oAqXwMmAHGlNDF+KFykksh/VlAl85xc1P5T7Mw8fKYvXNaImNHCCH/rg==
   dependencies:
-    "@octokit/openapi-types" "^3.2.1"
+    "@octokit/openapi-types" "^3.3.0"
     "@types/node" ">= 8"
 
 "@sinonjs/commons@^1.7.0":
@@ -734,9 +734,9 @@
   integrity sha512-37RSHht+gzzgYeobbG+KWryeAW8J33Nhr69cjTqSYymXVZEN9NbRYWoYlRtDhHKPVT1FyNKwaTPC1NynKZpzRA==
 
 "@types/yargs@^15.0.0":
-  version "15.0.12"
-  resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-15.0.12.tgz#6234ce3e3e3fa32c5db301a170f96a599c960d74"
-  integrity sha512-f+fD/fQAo3BCbCDlrUpznF1A5Zp9rB0noS5vnoormHSIPFKL0Z2DcUJ3Gxp5ytH4uLRNxy7AwYUC9exZzqGMAw==
+  version "15.0.13"
+  resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-15.0.13.tgz#34f7fec8b389d7f3c1fd08026a5763e072d3c6dc"
+  integrity sha512-kQ5JNTrbDv3Rp5X2n/iUu37IJBDU2gsZ5R/g1/KHOOEc5IKfUFjXT6DENPGduh08I/pamwtEq4oul7gUqKTQDQ==
   dependencies:
     "@types/yargs-parser" "*"
 
@@ -1767,9 +1767,9 @@ fast-levenshtein@^2.0.6, fast-levenshtein@~2.0.6:
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
 
 fastq@^1.6.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/fastq/-/fastq-1.10.0.tgz#74dbefccade964932cdf500473ef302719c652bb"
-  integrity sha512-NL2Qc5L3iQEsyYzweq7qfgy5OtXCmGzGvhElGEd/SoFWEMOEczNh5s5ocaF01HDetxz+p8ecjNPA6cZxxIHmzA==
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/fastq/-/fastq-1.10.1.tgz#8b8f2ac8bf3632d67afcd65dac248d5fdc45385e"
+  integrity sha512-AWuv6Ery3pM+dY7LYS8YIaCiQvUaos9OB1RyNgaOWnaX+Tik7Onvcsf8x8c+YtDeT0maYLniBip2hox5KtEXXA==
   dependencies:
     reusify "^1.0.4"
 

@@ -38,7 +38,7 @@
     "@actions/github": "^5.0.0"
   },
   "devDependencies": {
-    "@technote-space/github-action-test-helper": "^0.7.27",
+    "@technote-space/github-action-test-helper": "^0.7.28",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.3.1",

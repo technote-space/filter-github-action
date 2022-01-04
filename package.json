@@ -1,6 +1,6 @@
 {
   "name": "@technote-space/filter-github-action",
-  "version": "0.5.53",
+  "version": "0.5.54",
   "description": "Helper to filter GitHub Action.",
   "keywords": [
     "github",

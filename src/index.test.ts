@@ -1,6 +1,7 @@
-import {Context} from '@actions/github/lib/context';
-import {generateContext, testEnv} from '@technote-space/github-action-test-helper';
-import {isTargetEvent, isTargetLabels} from '../src';
+import { Context } from '@actions/github/lib/context';
+import { generateContext, testEnv } from '@technote-space/github-action-test-helper';
+import { describe, expect, it } from 'vitest';
+import { isTargetEvent, isTargetLabels } from '../src';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getTarget = (additional: { [key: string]: any } = {}): { [key: string]: any } => Object.assign({}, {
@@ -55,7 +56,7 @@ describe('isTargetEvent', () => {
   });
 
   it('should return true 7', () => {
-    expect(isTargetEvent(getTarget({'pull_request_target': '*'}), context('pull_request_target', 'rerequested', 'refs/tags/v1.2.3'), {notCheckPrTarget: true})).toBe(true);
+    expect(isTargetEvent(getTarget({ 'pull_request_target': '*' }), context('pull_request_target', 'rerequested', 'refs/tags/v1.2.3'), { notCheckPrTarget: true })).toBe(true);
   });
 
   it('should return true 8', () => {
@@ -72,11 +73,11 @@ describe('isTargetEvent', () => {
   });
 
   it('should return true 10', () => {
-    expect(isTargetEvent(getTarget({'workflow_run': '*'}), context('workflow_run', undefined, undefined), {notCheckWorkflowRun: true})).toBe(true);
+    expect(isTargetEvent(getTarget({ 'workflow_run': '*' }), context('workflow_run', undefined, undefined), { notCheckWorkflowRun: true })).toBe(true);
   });
 
   it('should return true 11', () => {
-    expect(isTargetEvent(getTarget({'*': context => context.ref.startsWith('refs/heads/test')}), context('repository_dispatch', undefined, 'refs/heads/test/123'))).toBe(true);
+    expect(isTargetEvent(getTarget({ '*': context => context.ref.startsWith('refs/heads/test') }), context('repository_dispatch', undefined, 'refs/heads/test/123'))).toBe(true);
   });
 
   it('should return false 1', () => {
@@ -100,15 +101,15 @@ describe('isTargetEvent', () => {
   });
 
   it('should return false 6', () => {
-    expect(isTargetEvent(getTarget(), context('pull_request_target', 'rerequested', 'refs/tags/v1.2.3'), {notCheckPrTarget: true})).toBe(false);
+    expect(isTargetEvent(getTarget(), context('pull_request_target', 'rerequested', 'refs/tags/v1.2.3'), { notCheckPrTarget: true })).toBe(false);
   });
 
   it('should return false 7', () => {
-    expect(isTargetEvent(getTarget(), context('workflow_run', undefined, undefined), {notCheckWorkflowRun: true})).toBe(false);
+    expect(isTargetEvent(getTarget(), context('workflow_run', undefined, undefined), { notCheckWorkflowRun: true })).toBe(false);
   });
 
   it('should return false 8', () => {
-    expect(isTargetEvent(getTarget({'*': context => context.ref.startsWith('refs/heads/test')}), context('repository_dispatch', undefined, 'refs/heads/feature'))).toBe(false);
+    expect(isTargetEvent(getTarget({ '*': context => context.ref.startsWith('refs/heads/test') }), context('repository_dispatch', undefined, 'refs/heads/feature'))).toBe(false);
   });
 });
 
@@ -117,7 +118,7 @@ describe('isTargetLabels', () => {
     expect(isTargetLabels(['test1'], [], Object.assign(context('issues'), {
       payload: {
         issue: {
-          labels: [{name: 'test2'}, {name: 'test3'}],
+          labels: [{ name: 'test2' }, { name: 'test3' }],
         },
       },
     }))).toBe(false);
@@ -127,7 +128,7 @@ describe('isTargetLabels', () => {
     expect(isTargetLabels(['test1'], ['test2'], Object.assign(context('issues'), {
       payload: {
         issue: {
-          labels: [{name: 'test1'}, {name: 'test2'}],
+          labels: [{ name: 'test1' }, { name: 'test2' }],
         },
       },
     }))).toBe(false);
@@ -147,7 +148,7 @@ describe('isTargetLabels', () => {
     expect(isTargetLabels(['test1'], [], Object.assign(context('issues'), {
       payload: {
         issue: {
-          labels: [{name: 'test1'}, {name: 'test2'}],
+          labels: [{ name: 'test1' }, { name: 'test2' }],
         },
       },
     }))).toBe(true);
@@ -157,7 +158,7 @@ describe('isTargetLabels', () => {
     expect(isTargetLabels(['test1'], ['test2'], Object.assign(context('issues'), {
       payload: {
         issue: {
-          labels: [{name: 'test1'}, {name: 'test3'}],
+          labels: [{ name: 'test1' }, { name: 'test3' }],
         },
       },
     }))).toBe(true);
@@ -167,7 +168,7 @@ describe('isTargetLabels', () => {
     expect(isTargetLabels(['test1', 'test2', 'test3'], ['test4'], Object.assign(context('issues'), {
       payload: {
         issue: {
-          labels: [{name: 'test2'}],
+          labels: [{ name: 'test2' }],
         },
       },
     }))).toBe(true);
@@ -177,7 +178,7 @@ describe('isTargetLabels', () => {
     expect(isTargetLabels([], ['test2'], Object.assign(context('issues'), {
       payload: {
         issue: {
-          labels: [{name: 'test1'}, {name: 'test3'}],
+          labels: [{ name: 'test1' }, { name: 'test3' }],
         },
       },
     }))).toBe(true);
@@ -211,7 +212,7 @@ describe('isTargetLabels', () => {
     expect(isTargetLabels([], [], Object.assign(context('issues'), {
       payload: {
         issue: {
-          labels: [{name: 'label1'}],
+          labels: [{ name: 'label1' }],
         },
       },
     }))).toBe(true);
@@ -227,7 +228,7 @@ describe('isTargetLabels', () => {
     expect(isTargetLabels(['label1'], [], Object.assign(context('issues'), {
       payload: {
         issue: {
-          labels: [{name: 'label1'}],
+          labels: [{ name: 'label1' }],
         },
       },
     }))).toBe(true);
@@ -235,7 +236,7 @@ describe('isTargetLabels', () => {
     expect(isTargetLabels(['label1'], [], Object.assign(context('issues'), {
       payload: {
         issue: {
-          labels: [{name: 'label1'}, {name: 'label2'}],
+          labels: [{ name: 'label1' }, { name: 'label2' }],
         },
       },
     }))).toBe(true);
@@ -243,7 +244,7 @@ describe('isTargetLabels', () => {
     expect(isTargetLabels(['label1', 'label2'], [], Object.assign(context('issues'), {
       payload: {
         issue: {
-          labels: [{name: 'label1'}],
+          labels: [{ name: 'label1' }],
         },
       },
     }))).toBe(true);
@@ -259,7 +260,7 @@ describe('isTargetLabels', () => {
     expect(isTargetLabels([], ['label1'], Object.assign(context('issues'), {
       payload: {
         issue: {
-          labels: [{name: 'label1'}],
+          labels: [{ name: 'label1' }],
         },
       },
     }))).toBe(false);
@@ -267,7 +268,7 @@ describe('isTargetLabels', () => {
     expect(isTargetLabels(['label1'], ['label2'], Object.assign(context('issues'), {
       payload: {
         issue: {
-          labels: [{name: 'label1'}, {name: 'label2'}],
+          labels: [{ name: 'label1' }, { name: 'label2' }],
         },
       },
     }))).toBe(false);
@@ -275,7 +276,7 @@ describe('isTargetLabels', () => {
     expect(isTargetLabels(['label1'], ['label3'], Object.assign(context('issues'), {
       payload: {
         issue: {
-          labels: [{name: 'label1'}, {name: 'label2'}],
+          labels: [{ name: 'label1' }, { name: 'label2' }],
         },
       },
     }))).toBe(true);

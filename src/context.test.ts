@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
 import { getContext } from '@technote-space/github-action-test-helper';
+import { describe, expect, it } from 'vitest';
 import { getLabels } from './context';
 
 describe('getLabels', () => {

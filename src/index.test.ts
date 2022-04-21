@@ -1,6 +1,6 @@
-import { describe, expect, it } from 'vitest';
 import { Context } from '@actions/github/lib/context';
 import { generateContext, testEnv } from '@technote-space/github-action-test-helper';
+import { describe, expect, it } from 'vitest';
 import { isTargetEvent, isTargetLabels } from '../src';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

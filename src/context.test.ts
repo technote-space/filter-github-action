@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import {getContext} from '@technote-space/github-action-test-helper';
-import {getLabels} from './context';
+import { getContext } from '@technote-space/github-action-test-helper';
+import { getLabels } from './context';
 
 describe('getLabels', () => {
   it('should return issue labels', () => {

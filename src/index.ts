@@ -1,6 +1,6 @@
-import {getInput} from '@actions/core';
-import {Context} from '@actions/github/lib/context';
-import {getLabels} from './context';
+import { getInput } from '@actions/core';
+import { Context } from '@actions/github/lib/context';
+import { getLabels } from './context';
 
 type OptionType = Partial<{
   notCheckPrTarget: boolean;

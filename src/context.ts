@@ -1,4 +1,4 @@
-import {Context} from '@actions/github/lib/context';
+import { Context } from '@actions/github/lib/context';
 
 export const getLabels = (context: Context): string[] | false => {
   if ('issues' === context.eventName) {

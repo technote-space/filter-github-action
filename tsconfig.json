@@ -70,7 +70,7 @@
   },
   "exclude": [
     "node_modules",
-    "__tests__",
+    "vite.config.ts",
     "dist/**/*"
   ]
 }

@@ -1,3 +1,4 @@
+import { describe, expect, it, vi } from 'vitest';
 import {Context} from '@actions/github/lib/context';
 import {generateContext, testEnv} from '@technote-space/github-action-test-helper';
 import {isTargetEvent, isTargetLabels} from '../src';

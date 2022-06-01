@@ -1,7 +1,7 @@
-import { Context } from '@actions/github/lib/context';
+import { Context } from '@actions/github/lib/context.js';
 import { generateContext, testEnv } from '@technote-space/github-action-test-helper';
 import { describe, expect, it } from 'vitest';
-import { isTargetEvent, isTargetLabels } from '../src';
+import { isTargetEvent, isTargetLabels } from './index.js';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getTarget = (additional: { [key: string]: any } = {}): { [key: string]: any } => Object.assign({}, {

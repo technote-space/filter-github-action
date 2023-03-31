@@ -1,6 +1,6 @@
 {
   "name": "@technote-space/filter-github-action",
-  "version": "0.6.7",
+  "version": "0.6.8",
   "description": "Helper to filter GitHub Action.",
   "keywords": [
     "github",
@@ -44,18 +44,18 @@
     "@actions/github": "^5.1.1"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^10.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
     "@sindresorhus/tsconfig": "^3.0.1",
-    "@technote-space/github-action-test-helper": "^0.11.1",
-    "@types/node": "^18.11.17",
-    "@typescript-eslint/eslint-plugin": "^5.47.0",
-    "@typescript-eslint/parser": "^5.47.0",
-    "@vitest/coverage-c8": "^0.26.2",
-    "eslint": "^8.30.0",
-    "eslint-plugin-import": "^2.26.0",
-    "rollup": "^3.8.1",
-    "typescript": "^4.9.4",
-    "vitest": "^0.26.2"
+    "@technote-space/github-action-test-helper": "^0.11.4",
+    "@types/node": "^18.15.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "@vitest/coverage-c8": "^0.29.8",
+    "eslint": "^8.37.0",
+    "eslint-plugin-import": "^2.27.5",
+    "rollup": "^3.20.2",
+    "typescript": "^5.0.3",
+    "vitest": "^0.29.8"
   },
   "publishConfig": {
     "access": "public"

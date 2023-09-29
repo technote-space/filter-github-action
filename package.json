@@ -47,15 +47,15 @@
     "@rollup/plugin-typescript": "^11.1.4",
     "@sindresorhus/tsconfig": "^4.0.0",
     "@technote-space/github-action-test-helper": "^0.11.17",
-    "@types/node": "^20.7.0",
+    "@types/node": "^20.7.1",
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.3",
     "@vitest/coverage-c8": "^0.33.0",
     "eslint": "^8.50.0",
     "eslint-plugin-import": "^2.28.1",
-    "rollup": "^3.29.3",
+    "rollup": "^3.29.4",
     "typescript": "^5.2.2",
-    "vitest": "^0.34.5"
+    "vitest": "^0.34.6"
   },
   "publishConfig": {
     "access": "public"
